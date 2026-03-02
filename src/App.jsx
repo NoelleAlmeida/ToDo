@@ -1,28 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
+import { v4 } from "uuid";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Estudar programação",
-      description: "Estudar programação para se tornar um desenvolvedor full stack.",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      title: "Treinar React",
-      description: "Praticar componentes, props e useState.",
-      isCompleted: false,
-    },
-    {
-      id: 3,
-      title: "Fazer projeto",
-      description: "Criar um gerenciador de tarefas.",
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || [
+      {
+        id: 1,
+        title: "Estudar programação",
+        description: "Estudar programação para se tornar um desenvolvedor full stack.",
+        isCompleted: false,
+      },
+      {
+        id: 2,
+        title: "Treinar React",
+        description: "Praticar componentes, props e useState.",
+        isCompleted: false,
+      },
+      {
+        id: 3,
+        title: "Fazer projeto",
+        description: "Criar um gerenciador de tarefas.",
+        isCompleted: false,
+      },
+    ]
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  useEffect(() => {
+    async function fetchTasks() {
+      const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+      const data = await response.json();
+
+      console.log(data);
+    }
+
+    fetchTasks();
+  }, []);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
@@ -43,7 +61,7 @@ function App() {
 
   function onAddTaskSubmit(title, description) {
     const newTask = {
-      id: tasks.length + 1,
+      id: v4(),
       title,
       description,
       isCompleted: false,
