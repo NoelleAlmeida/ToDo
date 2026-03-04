@@ -1,26 +1,42 @@
-# Gerenciador de Tarefas
+# ToDo App
 
-Meu primeiro projeto com React 🚀
+Aplicação de gerenciamento de tarefas criada para praticar desenvolvimento front-end, componentes, organização de projeto e publicação na web.
 
-Esse projeto foi desenvolvido durante meus estudos em desenvolvimento front-end.  
-A aplicação permite adicionar, concluir e remover tarefas de uma lista de forma simples e prática.
+## Acesse o projeto
+- Site: https://to-do-five-taupe.vercel.app
+- Repositório: https://github.com/NoelleAlmeida/ToDo
+
+## Sobre o projeto
+O ToDo App foi um dos meus primeiros projetos publicados e teve como objetivo colocar em prática conceitos importantes do desenvolvimento web.
+
+Com ele, pratiquei:
+- criação e organização de componentes
+- manipulação de tarefas
+- estruturação de projeto
+- estilização da interface
+- deploy na Vercel
 
 ## Funcionalidades
-
-- Adicionar uma nova tarefa
-- Adicionar descrição da tarefa
-- Marcar tarefa como concluída
-- Remover tarefa da lista
+- adicionar tarefas
+- concluir tarefas
+- remover tarefas
+- visualizar detalhes das tarefas
 
 ## Tecnologias utilizadas
-
 - React
-- Vite
 - JavaScript
-- Tailwind CSS
+- CSS
+- Vite
 
-## Como executar o projeto
+## Como rodar localmente
+1. Rode: npm install
+2. Rode: npm run dev
+3. Abra: http://localhost:5173
 
-1. Clone este repositório:
-```bash
-git clone https://github.com/NoelleAlmeida/ToDo.git
+## Status
+Projeto publicado e utilizado como parte do meu portfólio e da minha evolução como desenvolvedora.
+## Autora
+Noelle Almeida
+
+GitHub: https://github.com/NoelleAlmeida
+LinkedIn: https://www.linkedin.com/in/noelle-almeida-dos-santos-97a92a3a5/
